@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Page</title>
+    <style>
+      #container{
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+          grid-template-rows: repeat(3,auto);
+          gap:20px;
+      }
+      h2{
+          text-align: center;
+      }
+     
+      img{
+          margin-left: 30px;
+      }
+      h2+img{
+          height: 100px;
+          width: 100px;
+          margin-top: -35px;
+          margin-left: 35%;
+    
+    
+      }
+      h3{
+          text-align: center;
+          margin-top: -25px;
+      }
+      @media all and (min-width: 480px) and (max-width: 720px){
+          #container{
+              grid-template-columns: repeat(3,1fr);
+              grid-template-rows: repeat(4,auto);
+          }
+      }
+      @media all and (min-width: 250px) and (max-width: 479px){
+          #container{
+              grid-template-columns: repeat(2,1fr);
+              grid-template-rows: repeat(6,auto);
+          }
+      }
+    </style>
+    
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    let investors =[
+        {name:"Vijay Shekhar Sharma",
+        role:"Founder & CEO",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    
+        {name:"Kushal Shah",
+        role:"Founder",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+
+        },
+        {name:"Amerih Shahu",
+        role:"Ceo",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+        companyLogo:" https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"
+
+        },
+        {name:"Smapad wain",
+        role:"Co-Founder & Ceo",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"
+
+        },
+        {name:"Akhil Gupta",
+        role:"Co-Founder & Ceo",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Akhil_Gupta_Nobroker_539cd97f6c.jpg",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"
+
+        },
+        {name:"Sourabh garg",
+        role:"Co-Founder &CBO",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/saurbh_garg_nobroker_c0c71cc431.jpeg",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"
+
+        },
+        {name:"Vipin Padak",
+        role:"Co-Founder",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vipin_Pathak_Care24_acd02cd173.jpg",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/care24_1164f7a2cd.png"
+
+        },
+        {name:"Ramakant Sharma",
+        role:"Founder",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Ramakant_Sharma_livespace_0308e3627d.jpg",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/livspace_f9318b2e8d.png"
+
+        },
+        {name:"Abhishek Goyal",
+        role:"Co-Founder",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Abhishek_Goyal_tracxn_5b2f61d87d.jpg",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/tracxn_6d0c3de2ee.svg"
+
+        },
+        {name:"Anurag Jain ",
+        role:"Founder & Executive director",
+        image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Anurag_Jain_Kredx_b6ed6a31c6.jpg",
+        companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/kredx_rect_204437078a.svg"
+
+        },
+        {
+            name:"Sharda Balaji",
+            role:"Founder",
+            image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sharda_Balaji_Novojuris_2a206f2f88.jpg",
+            companyLogo:" https://masai-website-images.s3.ap-south-1.amazonaws.com/novojuris_ad9499f5b9.svg"
+
+        },
+        {
+            name:"Kulin Shah",
+            role:"Co-Founder",
+            image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Kulin_Shah_Onsurity_0dd3a1802f.jpg",
+            companyLogo:" https://masai-website-images.s3.ap-south-1.amazonaws.com/novojuris_ad9499f5b9.svg"
+
+        },
+         ]
+
+   investors.map(function(elem){
+       let box=document.createElement("div")
+       let avatar=document.createElement("img")
+       avatar.setAttribute("src",elem.image)
+       let mentorname=document.createElement("h2")
+       mentorname.innerText=elem.name
+       let company=document.createElement("img")
+       let post=document.createElement("h3")
+         post.innerText=elem.role
+       company.setAttribute("src",elem.companyLogo)
+       box.append(avatar,mentorname,company,post)
+       document.querySelector("#container").append(box)
+   })
+</script>
